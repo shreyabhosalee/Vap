@@ -346,10 +346,18 @@ onclick="openRentPopup('Casio fx-991EX calculator', 15, 200, 'Hostel B')">
 
 </section>
 
+<<<<<<< HEAD
     <!-- How It Works -->
 
     <section class="how-it-works">
 
+=======
+
+    <!-- How It Works -->
+
+    <section class="how-it-works">
+
+>>>>>>> a488ebb (hello)
         <h2>How It Works</h2>
 
         <div class="steps">
@@ -415,4 +423,8 @@ onclick="openRentPopup('Casio fx-991EX calculator', 15, 200, 'Hostel B')">
 
 </body>
 
+<<<<<<< HEAD
 </html>
+=======
+</html>
+>>>>>>> a488ebb (hello)
