@@ -82,50 +82,269 @@ include("db.php");
 
         </div>
     </section>
+<!-- Rental Items -->
 
-    <section id="items" class="section">
-        <h2 id="items-title">Featured Rental Items</h2>
-        <div class="items">
+<section id="items" class="section">
 
-            <div class="item-card" data-category="Books">
-                <h3>Engineering Mathematics</h3>
-                <p>Category: Books</p>
-                <p>Location: Computer Department</p>
-                <h4>40rs / day</h4>
-                <a href="details.php?id=1" class="details-btn">View Details</a>
+    <div class="items-header">
+
+        <h2>All items</h2>
+ </div>
+
+ <div class="items">
+
+
+        <!-- Item 1 -->
+<div class="item-card">
+
+            <p class="category">Books</p>
+
+            <h3>Engineering Mathematics </h3>
+
+            <p>Owner: Meera</p>
+
+            <p>Pickup: Library entrance</p>
+
+            <div class="price">
+                <strong>₹10</strong>
+                <span>per day</span>
+                <small>Deposit ₹100</small>
             </div>
 
-            <div class="item-card" data-category="Electronics">
-
-                <h3>HP Laptop</h3>
-                <p>Category: Electronics</p>
-                <p>Location: IT Department</p>
-                <h4>250rs/day</h4>
-                <a href="details.php?id=2" class="details-btn">View Details</a>
-            </div>
-
-            <div class="item-card" data-category="Calculators">
-
-                <h3>Scientific Calculator</h3>
-                <p>Category: Calculators</p>
-                <p>Location: Mechanical Department</p>
-                <h4>20rs / day</h4>
-                <a href="details.php?id=3" class="details-btn">View Details</a>
-            </div>
-
-            <div class="item-card" data-category="Hostel Essentials">
-
-                <h3>Lamp</h3>
-                <p>Category: Hostel Essentials</p>
-                <p>Location: Hostel room no.33</p>
-                <h4>80rs/day</h4>
-                <a href="details.php?id=4" class="details-btn">View Details</a>
-            </div>
+        <button class="details-btn"
+onclick="openRentPopup('Engineering Mathematics', 10, 100, 'Library entrance')">
+    Request to rent
+</button>
 
         </div>
-        <p id="no-items" style="display:none;">No items in this category yet.</p>
-    </section>
+ <!-- Item 2 -->
 
+        <div class="item-card">
+
+            <p class="category">Hostel & daily</p>
+
+            <h3>Induction</h3>
+
+            <p>Owner: Yash</p>
+
+            <p>Pickup: Hostel C</p>
+
+            <div class="price">
+                <strong>₹50</strong>
+                <span>per day</span>
+                <small>Deposit ₹400</small>
+            </div>
+
+<button class="details-btn"
+onclick="openRentPopup('Induction', 50, 400, 'Hostel C')">
+    Request to rent
+</button>
+
+        </div>
+ <!-- Item 3 -->
+
+        <div class="item-card">
+
+            <p class="category">Sports & events</p>
+
+            <h3>Badminton rackets (pair)</h3>
+
+            <p>Owner: Tanvi</p>
+
+            <p>Pickup: Sports complex</p>
+
+            <p class="requested">
+                ✓ Your requested this
+            </p>
+
+            <div class="price">
+                <strong>₹20</strong>
+                <span>per day</span>
+                <small>Deposit ₹200</small>
+            </div>
+
+<button class="details-btn"
+onclick="openRentPopup('Badminton rackets (pair)', 20, 200, 'Sports complex')">
+    Request to rent
+</button>
+
+        </div>
+ <!-- Item 4 -->
+
+        <div class="item-card">
+
+            <p class="category">Electronics</p>
+
+            <h3>Canon 1500D DSLR</h3>
+
+            <p>Owner: Ishan</p>
+
+            <p>Pickup: Media club room</p>
+
+            <div class="price">
+                <strong>₹200</strong>
+                <span>per day</span>
+                <small>Deposit ₹3,000</small>
+            </div>
+
+           <button class="details-btn"
+onclick="openRentPopup('Canon 1500D DSLR', 200, 3000, 'Media club room')">
+    Request to rent
+</button>
+        </div>
+  <!-- Item 5 -->
+
+        <div class="item-card">
+
+            <p class="category">Cycles & travel</p>
+
+            <h3>Hero cycle with lock</h3>
+
+            <p>Owner: Rohan</p>
+
+            <p>Pickup: Hostel A parking</p>
+
+            <div class="price">
+                <strong>₹30</strong>
+                <span>per day</span>
+                <small>Deposit ₹500</small>
+            </div>
+
+          <button class="details-btn"
+onclick="openRentPopup('Hero cycle with lock', 30, 500, 'Hostel A parking')">
+    Request to rent
+</button>
+
+        </div>
+  <!-- Item 6 -->
+ 
+        <div class="item-card">
+
+            <p class="category">Electronics</p>
+
+            <h3>Raspberry Pi 4 (4 GB)</h3>
+
+            <p>Owner: Nisha</p>
+
+            <p>Pickup: Computer Lab</p>
+
+            <div class="price">
+                <strong>₹60</strong>
+                <span>per day</span>
+                <small>Deposit ₹800</small>
+            </div>
+
+          <button class="details-btn"
+onclick="openRentPopup('Raspberry Pi 4 (4 GB)', 60, 800, 'Computer Lab')">
+    Request to rent
+</button>
+
+        </div>
+<!-- Item 7 -->
+
+        <div class="item-card">
+
+            <p class="category">Electronics</p>
+
+            <h3>Arduino Uno starter kit</h3>
+
+            <p>Owner: Kabir</p>
+
+            <p>Pickup: Library entrance</p>
+
+            <div class="price">
+                <strong>₹40</strong>
+                <span>per day</span>
+                <small>Deposit ₹500</small>
+            </div>
+
+<button class="details-btn"
+onclick="openRentPopup('Arduino Uno starter kit', 40, 500, 'Library entrance')">
+    Request to rent
+</button>
+
+        </div>
+  <!-- Item 8 -->
+
+        <div class="item-card">
+
+            <p class="category">Lab & drafting</p>
+
+            <h3>Lab coat (size M)</h3>
+
+            <p>Owner: Sneha</p>
+
+            <p>Pickup: Girls hostel gate</p>
+
+            <div class="price">
+                <strong>₹10</strong>
+                <span>per day</span>
+                <small>Deposit ₹100</small>
+            </div>
+
+         <button class="details-btn"
+onclick="openRentPopup('Lab coat (size M)', 10, 100, 'Girls hostel gate')">
+    Request to rent
+</button>
+
+        </div>
+
+
+        <!-- Item 9 -->
+
+        <div class="item-card">
+
+            <p class="category">Books</p>
+
+            <h3>Engineering Physics</h3>
+
+            <p>Owner: Varun</p>
+
+            <p>Pickup: Physics lab</p>
+
+            <div class="price">
+                <strong>₹10</strong>
+                <span>per day</span>
+                <small>Deposit ₹100</small>
+            </div>
+
+           <button class="details-btn"
+onclick="openRentPopup('Engineering Physics', 10, 100, 'Physics lab')">
+    Request to rent
+</button>
+
+        </div>
+
+
+        <!-- Item 10 -->
+
+        <div class="item-card">
+
+            <p class="category">Electronics</p>
+
+            <h3>Casio fx-991EX calculator</h3>
+
+            <p>Owner: Aarav</p>
+
+            <p>Pickup: Hostel B</p>
+
+            <div class="price">
+                <strong>₹15</strong>
+                <span>per day</span>
+                <small>Deposit ₹200</small>
+            </div>
+
+          <button class="details-btn"
+onclick="openRentPopup('Casio fx-991EX calculator', 15, 200, 'Hostel B')">
+    Request to rent
+</button>
+
+        </div>
+
+
+    </div>
+
+</section>
 
     <!-- How It Works -->
 
