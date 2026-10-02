@@ -49,7 +49,6 @@ include("db.php");
     </div>
 
 <form action="search.php" method="GET" class="search-box">
-
     <input type="text" name="search" placeholder="Search items">
 
     <button type="submit">Search</button>
@@ -75,6 +74,7 @@ include("db.php");
         <div class="category"> Hostel Essentials </div>
         <div class="category"> Lab Equipment </div>
         <div class="category"> Others </div>
+        <div class="category"> laptop</div>
 
     </div>
 </section>
