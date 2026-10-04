@@ -143,7 +143,7 @@ onclick="window.location.href='details.php?id=2'">
              <div class="price">
                 <strong>₹20</strong>
                 <span>per day</span>
-                <small>Deposit ₹200</small>
+                <small>Deposite ₹200</small>
             </div>
 
 <button class="details-btn"
