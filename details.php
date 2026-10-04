@@ -1,49 +1,107 @@
 <?php
 
-$id = $_GET['id'] ?? 1;
-
 $items = [
 
     1 => [
         "name" => "Engineering Mathematics",
         "category" => "Books",
-        "location" => "Computer Department",
-        "price" => 40,
-        "image" => "mathsbook.jpg",
-        "description" => "Engineering Mathematics textbook useful for engineering students for study and exam preparation."
+        "owner" => "Meera",
+        "price" => 10,
+        "deposit" => 100,
+        "pickup" => "Library entrance"
     ],
 
     2 => [
-        "name" => "HP Laptop",
-        "category" => "Electronics",
-        "location" => "IT Department",
-        "price" => 250,
-        "image" => "hplaptop.jpg",
-        "description" => "HP Laptop suitable for programming, assignments, projects, online classes and other college work."
+        "name" => "Induction",
+        "category" => "Hostel Essentials",
+        "owner" => "Veer",
+        "price" => 50,
+        "deposit" => 400,
+        "pickup" => "Hostel C"
     ],
 
     3 => [
-        "name" => "Scientific Calculator",
-        "category" => "Study Tools",
-        "location" => "Mechanical Department",
+        "name" => "Badminton rackets (pair)",
+        "category" => "Sports",
+        "owner" => "Tanvi",
         "price" => 20,
-        "image" => "cal.jpg",
-        "description" => "Scientific calculator useful for engineering mathematics, physics and other technical calculations."
+        "deposit" => 200,
+        "pickup" => "Sports complex"
     ],
 
-      4 => [
-        "name" => "Lamp",
-        "category" => "Study Tools",
-        "location" => "Hostel room no.33",
-        "price" => 80,
-        "image" => "lamp.jpg",
-        "description" => "A useful and affordable study lamp that provides bright, focused lighting for studying and reading."
-    ]
+    4 => [
+        "name" => "Canon 1500D DSLR",
+        "category" => "Electronics",
+        "owner" => "Ishan",
+        "price" => 200,
+        "deposit" => 3000,
+        "pickup" => "Media club room"
+    ],
 
+    5 => [
+        "name" => "Hero cycle with lock",
+        "category" => "Cycles & Travel",
+        "owner" => "Rohan",
+        "price" => 30,
+        "deposit" => 500,
+        "pickup" => "Hostel A parking"
+    ],
+
+    6 => [
+        "name" => "Engineering Chemistry",
+        "category" => "Books",
+        "owner" => "Nisha",
+        "price" => 10,
+        "deposit" => 100,
+        "pickup" => "Chemistry Lab"
+    ],
+
+    7 => [
+        "name" => "Electric kettle",
+        "category" => "Electronics",
+        "owner" => "Kabir",
+        "price" => 50,
+        "deposit" => 500,
+        "pickup" => "Library entrance"
+    ],
+
+    8 => [
+        "name" => "Lab coat (size M)",
+        "category" => "Lab & Drafting",
+        "owner" => "Sneha",
+        "price" => 10,
+        "deposit" => 100,
+        "pickup" => "Girls hostel gate"
+    ],
+
+    9 => [
+        "name" => "Engineering Physics",
+        "category" => "Books",
+        "owner" => "Varun",
+        "price" => 10,
+        "deposit" => 100,
+        "pickup" => "Physics lab"
+    ],
+
+    10 => [
+        "name" => "Casio fx-991EX calculator",
+        "category" => "Electronics",
+        "owner" => "Aarav",
+        "price" => 15,
+        "deposit" => 200,
+        "pickup" => "Hostel B"
+    ]
 ];
 
+
+// Get item ID from URL
+$id = isset($_GET['id']) ? (int)$_GET['id'] : 1;
+
+
+// Check item exists
 if (!isset($items[$id])) {
-    $id = 1;
+    echo "Item not found.";
+    exit;
 }
 
 $item = $items[$id];
@@ -57,144 +115,231 @@ $item = $items[$id];
 
     <meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>
-        <?php echo $item["name"]; ?> - Campus Rental Hub
+        <?php echo $item['name']; ?> - Campus Rental Hub
     </title>
 
     <link rel="stylesheet" href="style.css">
 
 </head>
 
+
 <body>
 
-<header>
+<div class="rental-container">
 
-    <div class="logo">
-
-        <img src="logo.png" alt="Campus Rental Hub Logo">
-
-        <span>Campus Rental Hub</span>
-
-    </div>
-<nav>
-
-        <a href="index.php">Home</a>
-
-        <a href="index.php#categories">Categories</a>
-
-        <a href="index.php#items">Browse Items</a>
-
-        <a href="index.php#about">About</a>
-
-    </nav>
+    <a href="index.php" class="back-link">
+        ← Back to items
+    </a>
 
 
-    <div class="login-register">
+    <div class="rental-card">
 
-        <a href="login.php" class="login">Login</a>
+        <div class="rental-left">
 
-        <a href="register.php" class="register">Register</a>
-
-    </div>
-
-</header>
-
-
-<section class="details-page">
-
-    <div class="details-image">
-
-        <img
-            src="<?php echo $item["image"]; ?>"
-            alt="<?php echo $item["name"]; ?>"
-        >
-
-    </div>
-
-
-    <div class="details-info">
-
-        <h1>
-            <?php echo $item["name"]; ?>
-        </h1>
-
-
-        <p>
-            <strong>Category:</strong>
-            <?php echo $item["category"]; ?>
-        </p>
-
-
-        <p>
-            <strong>Location:</strong>
-            <?php echo $item["location"]; ?>
-        </p>
-
-
-        <p>
-            <strong>Rent:</strong>
-
-            <span class="details-price">
-                ₹<?php echo $item["price"]; ?> / day
+            <span class="category">
+                <?php echo $item['category']; ?>
             </span>
 
-        </p>
+
+            <h1>
+                <?php echo $item['name']; ?>
+            </h1>
 
 
-        <p>
-            <strong>Description:</strong>
-        </p>
-
-        <p>
-            <?php echo $item["description"]; ?>
-        </p>
+            <p class="owner">
+                Owner: <?php echo $item['owner']; ?>
+            </p>
 
 
-        <p>
-            <strong>Availability:</strong>
-
-            <span class="available">
-                Available
-            </span>
-
-        </p>
+            <p class="pickup">
+                 Pickup: <?php echo $item['pickup']; ?>
+            </p>
 
 
-        <button class="request-btn">
-            Send Rental Request
-        </button>
+            <h2 class="price">
+                ₹<?php echo $item['price']; ?>
+                <span>per day</span>
+            </h2>
 
 
-        <br><br>
+            <p class="deposit">
+                Refundable Deposit:
+                ₹<?php echo number_format($item['deposit']); ?>
+            </p>
+
+        </div>
 
 
-        <a href="index.php#items" class="back-btn">
-            ← Back to Items
-        </a>
+        <div class="rental-right">
+
+            <h2>Rent this item</h2>
+
+
+            <div class="date-group">
+
+                <div>
+                    <label>From</label>
+
+                    <input
+                        type="date"
+                        id="fromDate"
+                        onchange="calculateRent()"
+                    >
+                </div>
+
+
+                <div>
+                    <label>Until</label>
+
+                    <input
+                        type="date"
+                        id="untilDate"
+                        onchange="calculateRent()"
+                    >
+                </div>
+
+            </div>
+
+
+            <div class="calculation">
+
+                <div>
+                    <span>Rent</span>
+
+                    <strong id="rentAmount">
+                        ₹0
+                    </strong>
+                </div>
+
+
+                <div>
+                    <span>Refundable deposit</span>
+
+                    <strong>
+                        ₹<?php echo number_format($item['deposit']); ?>
+                    </strong>
+                </div>
+
+
+                <hr>
+
+
+                <div class="total">
+
+                    <span>Pay at pickup</span>
+
+                    <strong id="totalAmount">
+                        ₹<?php echo number_format($item['deposit']); ?>
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="send-request-btn"
+                onclick="sendRequest()"
+            >
+                Send rental request
+            </button>
+
+        </div>
 
     </div>
 
-</section>
+</div>
 
 
-<footer>
+<script>
 
-    <div class="footer-logo">
+const pricePerDay = <?php echo $item['price']; ?>;
 
-        <img src="logo.png" alt="Campus Rental Hub Logo">
+const deposit = <?php echo $item['deposit']; ?>;
 
-        <span>Campus Rental Hub</span>
 
-    </div>
+// Set today's date
+let today = new Date().toISOString().split("T")[0];
 
-    <p>
-        2026 Campus Rental Hub | Built for Students
-    </p>
+document.getElementById("fromDate").min = today;
+document.getElementById("untilDate").min = today;
 
-</footer>
 
+function calculateRent() {
+
+    let from = document.getElementById("fromDate").value;
+
+    let until = document.getElementById("untilDate").value;
+
+
+    if (!from || !until) {
+        return;
+    }
+
+
+    let startDate = new Date(from);
+
+    let endDate = new Date(until);
+
+
+    let difference =
+        endDate - startDate;
+
+
+    let days =
+        difference / (1000 * 60 * 60 * 24);
+
+
+    if (days <= 0) {
+
+        document.getElementById("rentAmount").innerText = "₹0";
+
+        document.getElementById("totalAmount").innerText =
+            "₹" + deposit;
+
+        return;
+    }
+
+
+    let rent = days * pricePerDay;
+
+    let total = rent + deposit;
+
+
+    document.getElementById("rentAmount").innerText =
+        "₹" + rent;
+
+
+    document.getElementById("totalAmount").innerText =
+        "₹" + total;
+}
+
+
+function sendRequest() {
+
+    let from = document.getElementById("fromDate").value;
+
+    let until = document.getElementById("untilDate").value;
+
+
+    if (!from || !until) {
+
+        alert("Please select From and Until dates.");
+
+        return;
+    }
+
+
+    alert(
+        "Rental request sent for <?php echo $item['name']; ?>!"
+    );
+}
+
+</script>
 
 </body>
 

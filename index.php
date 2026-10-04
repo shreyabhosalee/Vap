@@ -8,170 +8,152 @@ include("db.php");
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Campus Rental Hub</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <header>
-        <div class="logo">
-            <img src="Image.jpg/logo.png" alt="Campus Rental Hub logo">
-            <span>Campus Rental Hub</span>
-        </div>
-        <nav>
-            <a href="index.php">Home</a>
-            <a href="#categories">Categories</a>
-            <a href="#items">Browse Items</a>
-            <a href="#about">About</a>
-        </nav>
 
-        <div class="login-register">
-            <a href="login.php" class="login">Login</a>
-            <a href="register.php" class="register">Register</a>
-            <a href="listitem.html" class="Listitem">List an item</a>
-        </div>
+<!-- ================= NAVBAR ================= -->
 
-    </header>
-    <!-- Home Section -->
-    <section class="hero">
+<header class="navbar">
 
-        <div class="hero-image">
-            <img src="Image.jpg/universityWebsite.jpeg" alt="Students">
-        </div>
-        <div class="hero-text">
-            <div class="tag">Built for College Students</div>
-            <h1>
-                Rent Smarter.<br>
-                <span>Live Better.</span>
-            </h1>
-            <p>
-                Find affordable books, electronics, study
-                equipment and more — all within your campus community.
+    <!-- LOGO -->
+    <div class="logo">
+        <img src="logo.png" alt="Campus Rental Hub Logo">
+        <span>Campus Rental Hub</span>
+    </div>
+
+
+    <!-- NAVIGATION -->
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#categories">Categories</a>
+    <a href="#items">Browse Items</a>
+</nav>
+
+
+    <!-- LOGIN / REGISTER -->
+    
+    <div class="login-register">
+        <a href="list-item.php" class="list-item-btn">List an Item</a>
+        <a href="login.php" class="login">Login</a>
+        <a href="register.php" class="register">Register</a>
+    </div>
+
+
+
+</header>
+ <!-- HOME  -->
+
+<section id="home" class="hero">
+
+    <img src="Campus.jpeg" alt="Students using Campus Rental Hub">
+
+<!-- CATEGORIES  -->
+
+<section id="categories" class="categories">
+
+    <div class="category-header">
+
+        <div>
+            <p class="small-title">
+                START WITH A CATEGORY
             </p>
+
+            <h2>
+                What are you looking for?
+            </h2>
         </div>
 
-        <form action="search.php" method="GET" class="search-box">
+        <a href="#items" class="see-all">
+            See all →
+        </a>
 
-            <input type="text" name="search" placeholder="Search items">
+    </div>
 
-            <button type="submit">Search</button>
-        </form>
+    <div class="category-list">
 
-    </section>
-    <section class="categories">
-        <div class="category-header">
-            <div>
-                <p>START WITH A CATEGORY</p>
-                <h2>What are you looking for?</h2>
-            </div>
+        <button class="category active" type="button" data-category="All"> All  </button>
+        <button class="category" type="button" data-category="Books"> Books </button>
+        <button class="category" type="button" data-category="Calculators"> Calculators </button>
+        <button class="category" type="button" data-category="Cycles">Cycles</button>
+        <button class="category" type="button" data-category="Electronics">Electronics</button>
+        <button class="category" type="button" data-category="Furniture">Furniture</button>
+        <button class="category" type="button" data-category="Hostel Essentials">Hostel Essentials</button>
+        <button class="category" type="button" data-category="Lab Equipment">Lab Equipment</button>
+        <button class="category" type="button" data-category="Others">Others</button>
+ </div>
+</section>
+<!-- RENTAL ITEMS -->
 
-            <a href="">See all →</a>
-        </div>
-        <div class="category-list">
-            <button class="category active" type="button" data-category="All">All</button>
-            <button class="category" type="button" data-category="Books">Books</button>
-            <button class="category" type="button" data-category="Calculators">Calculators</button>
-            <button class="category" type="button" data-category="Cycles">Cycles</button>
-            <button class="category" type="button" data-category="Electronics">Electronics</button>
-            <button class="category" type="button" data-category="Furniture">Furniture</button>
-            <button class="category" type="button" data-category="Hostel Essentials">Hostel Essentials</button>
-            <button class="category" type="button" data-category="Lab Equipment">Lab Equipment</button>
-            <button class="category" type="button" data-category="Others">Others</button>
-
-
-        </div>
-    </section>
-<!-- Rental Items -->
-
-<section id="items" class="section">
+<section id="items" class="items-section">
 
     <div class="items-header">
-
-        <h2>All items</h2>
+        <h2> Featured Rental Items</h2>
  </div>
 
  <div class="items">
-
-
-        <!-- Item 1 -->
-<div class="item-card">
-
-            <p class="category">Books</p>
-
-            <h3>Engineering Mathematics </h3>
-
-            <p>Owner: Meera</p>
-
-            <p>Pickup: Library entrance</p>
-
-            <div class="price">
-                <strong>₹10</strong>
-                <span>per day</span>
-                <small>Deposit ₹100</small>
-            </div>
-
-        <button class="details-btn"
-onclick="openRentPopup('Engineering Mathematics', 10, 100, 'Library entrance')">
-    Request to rent
-</button>
-
-        </div>
- <!-- Item 2 -->
+ <!-- ITEM 1 -->
 
         <div class="item-card">
 
-            <p class="category">Hostel & daily</p>
-
-            <h3>Induction</h3>
-
-            <p>Owner: Yash</p>
-
-            <p>Pickup: Hostel C</p>
-
+            <p class="item-category"> Books </p>
+            <h3> Engineering Mathematics </h3>
+            <p>  Owner: Meera   </p>
+            <p> Pickup: Library entrance   </p>
             <div class="price">
-                <strong>₹50</strong>
-                <span>per day</span>
-                <small>Deposit ₹400</small>
-            </div>
+               <strong>₹10</strong>
+                  <span> per day </span>
+                  <small>Deposit ₹100</small>
+                  </div>
 
 <button class="details-btn"
-onclick="openRentPopup('Induction', 50, 400, 'Hostel C')">
+onclick="window.location.href='details.php?id=1'">
     Request to rent
 </button>
-
-        </div>
- <!-- Item 3 -->
+</div>
+ <!-- ITEM 2 -->
 
         <div class="item-card">
+           <p class="item-category"> Hostel Essentials </p>
+            <h3> Induction </h3>
+            <p>  Owner: Veer   </p>
+            <p> Pickup: Hostel C   </p>
+            <div class="price">
+               <strong>₹50</strong>
+                  <span> per day </span>
+                   <small>Deposit ₹400</small>
+                    </div>
+                    
+<button class="details-btn"
+onclick="window.location.href='details.php?id=2'">
+    Request to rent
+</button>
+</div>
+        <!-- ITEM 3 -->
+ <div class="item-card">
 
             <p class="category">Sports & events</p>
-
             <h3>Badminton rackets (pair)</h3>
-
             <p>Owner: Tanvi</p>
-
             <p>Pickup: Sports complex</p>
-
-            <p class="requested">
-                ✓ Your requested this
-            </p>
-
-            <div class="price">
+             <div class="price">
                 <strong>₹20</strong>
                 <span>per day</span>
                 <small>Deposit ₹200</small>
             </div>
 
 <button class="details-btn"
-onclick="openRentPopup('Badminton rackets (pair)', 20, 200, 'Sports complex')">
+onclick="window.location.href='details.php?id=3'">
     Request to rent
 </button>
 
         </div>
- <!-- Item 4 -->
-
-        <div class="item-card">
+        <!-- ITEM 4 -->
+          <div class="item-card">
 
             <p class="category">Electronics</p>
 
@@ -187,12 +169,12 @@ onclick="openRentPopup('Badminton rackets (pair)', 20, 200, 'Sports complex')">
                 <small>Deposit ₹3,000</small>
             </div>
 
-           <button class="details-btn"
-onclick="openRentPopup('Canon 1500D DSLR', 200, 3000, 'Media club room')">
+<button class="details-btn"
+onclick="window.location.href='details.php?id=4'">
     Request to rent
 </button>
         </div>
-  <!-- Item 5 -->
+<!-- ITEM 5 -->
 
         <div class="item-card">
 
@@ -210,60 +192,57 @@ onclick="openRentPopup('Canon 1500D DSLR', 200, 3000, 'Media club room')">
                 <small>Deposit ₹500</small>
             </div>
 
-          <button class="details-btn"
-onclick="openRentPopup('Hero cycle with lock', 30, 500, 'Hostel A parking')">
+     <button class="details-btn"
+onclick="window.location.href='details.php?id=5'">
     Request to rent
 </button>
+</div>
+ <!-- ITEM 6 -->
 
-        </div>
-  <!-- Item 6 -->
- 
         <div class="item-card">
 
-            <p class="category">Electronics</p>
+            <p class="category">Books</p>
 
-            <h3>Raspberry Pi 4 (4 GB)</h3>
+            <h3>Engineering Chemistry</h3>
 
             <p>Owner: Nisha</p>
 
-            <p>Pickup: Computer Lab</p>
+            <p>Pickup: Chemistry Lab</p>
 
             <div class="price">
-                <strong>₹60</strong>
+                <strong>₹10</strong>
                 <span>per day</span>
-                <small>Deposit ₹800</small>
+                <small>Deposit ₹100</small>
             </div>
 
-          <button class="details-btn"
-onclick="openRentPopup('Raspberry Pi 4 (4 GB)', 60, 800, 'Computer Lab')">
+<button class="details-btn"
+onclick="window.location.href='details.php?id=6'">
     Request to rent
 </button>
-
-        </div>
+ </div>
 <!-- Item 7 -->
 
         <div class="item-card">
 
             <p class="category">Electronics</p>
 
-            <h3>Arduino Uno starter kit</h3>
+            <h3>Electric kettle</h3>
 
             <p>Owner: Kabir</p>
 
             <p>Pickup: Library entrance</p>
 
             <div class="price">
-                <strong>₹40</strong>
+                <strong>₹50</strong>
                 <span>per day</span>
                 <small>Deposit ₹500</small>
             </div>
 
 <button class="details-btn"
-onclick="openRentPopup('Arduino Uno starter kit', 40, 500, 'Library entrance')">
+onclick="window.location.href='details.php?id=7'">
     Request to rent
 </button>
-
-        </div>
+</div>
   <!-- Item 8 -->
 
         <div class="item-card">
@@ -282,15 +261,12 @@ onclick="openRentPopup('Arduino Uno starter kit', 40, 500, 'Library entrance')">
                 <small>Deposit ₹100</small>
             </div>
 
-         <button class="details-btn"
-onclick="openRentPopup('Lab coat (size M)', 10, 100, 'Girls hostel gate')">
+   <button class="details-btn"
+onclick="window.location.href='details.php?id=8'">
     Request to rent
 </button>
-
-        </div>
-
-
-        <!-- Item 9 -->
+</div>
+ <!-- Item 9 -->
 
         <div class="item-card">
 
@@ -308,15 +284,13 @@ onclick="openRentPopup('Lab coat (size M)', 10, 100, 'Girls hostel gate')">
                 <small>Deposit ₹100</small>
             </div>
 
-           <button class="details-btn"
-onclick="openRentPopup('Engineering Physics', 10, 100, 'Physics lab')">
+<button class="details-btn"
+onclick="window.location.href='details.php?id=9'">
     Request to rent
 </button>
 
         </div>
-
-
-        <!-- Item 10 -->
+<!-- Item 10 -->
 
         <div class="item-card">
 
@@ -334,16 +308,29 @@ onclick="openRentPopup('Engineering Physics', 10, 100, 'Physics lab')">
                 <small>Deposit ₹200</small>
             </div>
 
-          <button class="details-btn"
-onclick="openRentPopup('Casio fx-991EX calculator', 15, 200, 'Hostel B')">
+<button class="details-btn"
+onclick="window.location.href='details.php?id=10'">
     Request to rent
 </button>
 
-        </div>
+</div>
+</div>
+</section>
 
+<footer>
+
+    <div class="footer-logo">
+
+        <img src="logo.png"
+ alt="Campus Rental Hub Logo" >
+
+        <span>
+            Campus Rental Hub
+        </span>
 
     </div>
 
+<<<<<<< HEAD
 </section>
 
 <<<<<<< HEAD
@@ -396,35 +383,24 @@ onclick="openRentPopup('Casio fx-991EX calculator', 15, 200, 'Hostel B')">
         Campus Rental Hub connects students who need items
         with students who already have them. Share resources,
         reduce expenses and make campus life easier.
+=======
+    <p>
+        2026 Campus Rental Hub | Built for Students
+>>>>>>> 7ab2583 (hello)
     </p>
 
-    <button onclick="startRenting()">Start Renting</button>
+</footer>
 
-</section> -->
-
-    <footer>
-
-        <div class="footer-logo">
-            <img src="Image.jpg/logo.png" alt="Campus Rental Hub logo">
-            <span>Campus Rental Hub</span>
-        </div>
-
-        <p>2026 Campus Rental Hub | Built for Students</p>
-
-        <div>
-            <a href="">Privacy</a>
-            <a href="">Terms</a>
-            <a href="">Contact</a>
-        </div>
-
-    </footer>
-
-    <script src="script.js"></script>
+<script src="script.js"></script>
 
 </body>
+<<<<<<< HEAD
 
 <<<<<<< HEAD
 </html>
 =======
 </html>
 >>>>>>> a488ebb (hello)
+=======
+</html>
+>>>>>>> 7ab2583 (hello)
